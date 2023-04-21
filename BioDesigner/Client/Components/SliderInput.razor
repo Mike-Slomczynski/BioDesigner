@@ -1,5 +1,8 @@
-﻿<h3>SliderInput</h3>
+﻿<input type="range" min="@Min" max="@Max" step="@Step" @bind="Value" />
 
 @code {
-
+    [Parameter] public double Value { get; set; }
+    [Parameter] public double Min { get; set; }
+    [Parameter] public double Max { get; set; }
+    [Parameter] public double Step { get; set; } = 1;
 }

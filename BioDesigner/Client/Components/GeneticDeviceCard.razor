@@ -1,5 +1,15 @@
-﻿<h3>GeneticDeviceCard</h3>
+﻿@using BioDesigner.Client.Models;
+
+<div class="genetic-device-card">
+    <h4>@GeneticDevice.Name</h4>
+    <div class="genetic-parts">
+        @foreach (var part in GeneticDevice.Parts)
+        {
+            <GeneticPartCard GeneticPart="part" />
+        }
+    </div>
+</div>
 
 @code {
-
+    [Parameter] public GeneticDevice GeneticDevice { get; set; } = new DefaultGeneticDevice();
 }

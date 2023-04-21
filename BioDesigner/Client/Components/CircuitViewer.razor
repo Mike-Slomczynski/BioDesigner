@@ -1,5 +1,12 @@
-﻿<h3>CircuitViewer</h3>
+﻿@using BioDesigner.Client.Models;
+
+<div class="circuit-viewer">
+    @foreach (var device in GeneticCircuit.Devices)
+    {
+        <GeneticDeviceCard GeneticDevice="@device" />
+    }
+</div>
 
 @code {
-
+    [Parameter] public GeneticCircuit GeneticCircuit { get; set; }
 }

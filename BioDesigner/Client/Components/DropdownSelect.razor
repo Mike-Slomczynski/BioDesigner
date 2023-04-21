@@ -1,5 +1,11 @@
-﻿<h3>DropdownSelect</h3>
+﻿<select @bind="SelectedValue">
+    @foreach (var item in Items)
+    {
+        <option value="@item">@item</option>
+    }
+</select>
 
 @code {
-
+    [Parameter] public string SelectedValue { get; set; }
+    [Parameter] public List<string> Items { get; set; }
 }

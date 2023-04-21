@@ -1,5 +1,12 @@
-﻿<h3>GeneticPartCard</h3>
+﻿@using BioDesigner.Client.Models;
+
+<div class="genetic-part-card">
+    <h4>@GeneticPart.Name</h4>
+    <p>Type: @GeneticPart.Type</p>
+    <p>Function: @GeneticPart.Function</p>
+</div>
 
 @code {
-
+    [Parameter] public GeneticPart GeneticPart { get; set; } = new DefaultGeneticPart();
 }
+T
