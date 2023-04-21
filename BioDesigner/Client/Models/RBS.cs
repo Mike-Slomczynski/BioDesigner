@@ -1,6 +1,13 @@
-﻿namespace BioDesigner.Client.Models
+﻿namespace BioDesigner.Client.Models;
+
+public class RBS : GeneticPart
 {
-    public class RBS
+    public double Efficiency { get; set; }
+
+    // Constructor
+    public RBS(string id, string name, string description, double efficiency)
+        : base(id, name, description)
     {
+        Efficiency = efficiency;
     }
 }
