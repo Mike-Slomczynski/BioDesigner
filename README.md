@@ -32,7 +32,7 @@ Open your web browser and navigate to http://localhost:7240 to use the applicati
 To-do List
 - [ ] Implement basic application structure
 - [ ] Create genetic part and device models
-- [ ] Implement UI components for displaying and editing genetic parts and devices
+- [ ] Implement UI components for displaying and editing genetic parts and devices[^1]
 - [ ] Create pages for circuit design, simulation, visualization, documentation, and community (optional)
 - [ ] Implement CircuitDesignerCanvas component with drag-and-drop functionality and other interactions for designing genetic circuits
 - [ ] Create a simulation service for running simulations, validating designs, and returning simulation results
@@ -46,5 +46,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+[^1]: [Synthetic Biology Open Language (SBOL)](https://en.wikipedia.org/wiki/Synthetic_Biology_Open_Language) standard visual symbols
+
