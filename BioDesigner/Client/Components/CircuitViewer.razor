@@ -8,5 +8,5 @@
 </div>
 
 @code {
-    [Parameter] public GeneticCircuit GeneticCircuit { get; set; }
+    [Parameter] public GeneticCircuit GeneticCircuit { get; set; } = new GeneticCircuit(Guid.NewGuid(), "New Circuit", new List<GeneticDevice>());
 }

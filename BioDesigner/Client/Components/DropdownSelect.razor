@@ -6,6 +6,6 @@
 </select>
 
 @code {
-    [Parameter] public string SelectedValue { get; set; }
-    [Parameter] public List<string> Items { get; set; }
+    [Parameter] public string SelectedValue { get; set; } = string.Empty;
+    [Parameter] public List<string> Items { get; set; } = new List<string>();
 }

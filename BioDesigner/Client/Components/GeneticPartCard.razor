@@ -1,12 +1,15 @@
 ﻿@using BioDesigner.Client.Models;
 
-<div class="genetic-part-card">
-    <h4>@GeneticPart.Name</h4>
-    <p>Type: @GeneticPart.Type</p>
-    <p>Function: @GeneticPart.Function</p>
+<div class="genetic-part-card" @onclick="SelectPart">
+    <img src="@($"{GeneticPart.Type.ToString().ToLower()}.png")" alt="@GeneticPart.Type" />
 </div>
 
 @code {
     [Parameter] public GeneticPart GeneticPart { get; set; } = new DefaultGeneticPart();
+    [Parameter] public EventCallback<GeneticPart> OnPartSelected { get; set; }
+
+    private void SelectPart()
+    {
+        OnPartSelected.InvokeAsync(GeneticPart);
+    }
 }
-T

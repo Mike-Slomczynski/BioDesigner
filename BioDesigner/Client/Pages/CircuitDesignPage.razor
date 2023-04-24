@@ -1,5 +1,41 @@
-﻿<h3>CircuitDesignPage</h3>
+﻿@page "/circuit-design"
+@using BioDesigner.Client.Models
+@using BioDesigner.Client.Components;
+
+<h2>Circuit Design</h2>
+
+<div class="design-container">
+    <div class="toolbox">
+        <h3>Genetic Parts</h3>
+        <GeneticPartCard GeneticPart="PromoterExample" OnPartSelected="SelectPart" />
+        <GeneticPartCard GeneticPart="RBSExample" OnPartSelected="SelectPart" />
+        <!-- Add more genetic parts and devices here -->
+    </div>
+    
+    <div class="canvas-container">
+        <CircuitDesignerCanvas />
+    </div>
+    
+    <div class="properties-panel">
+        @if (SelectedPart != null)
+        {
+            <h4>@SelectedPart.Name</h4>
+            <p>Type: @SelectedPart.Type</p>
+            <p>Function: @SelectedPart.Function</p>
+            <!-- Add more part-specific properties here -->
+        }
+    </div>
+</div>
+
+<button class="save-circuit-btn">Save Circuit</button>
 
 @code {
+    private GeneticPart? SelectedPart { get; set; }
+    private Promoter PromoterExample { get; set; } = new Promoter(Guid.NewGuid(), "Promoter 1", "Strong promoter", 0.0);
+    private RBS RBSExample { get; set; } = new RBS(Guid.NewGuid(), "RBS 1", "Strong RBS", 0.0);
 
+    private void SelectPart(GeneticPart part)
+    {
+        SelectedPart = part;
+    }
 }
